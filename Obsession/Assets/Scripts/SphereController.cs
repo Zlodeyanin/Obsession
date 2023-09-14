@@ -3,8 +3,8 @@ using UnityEngine;
 public class SphereController : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] EndPoint _endPoint;
 
+    private Vector2 _endPosition = new Vector2(8f, 0f);
     private Vector2 _startPosition;
     private float _zeroMove = 0;
 
@@ -15,7 +15,7 @@ public class SphereController : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.x > _endPoint.Vector2.x)
+        if (transform.position.x > _endPosition.x)
         {
             transform.Translate(_startPosition.x * 2, _zeroMove, _zeroMove);
         }
